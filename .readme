@@ -1,0 +1,115 @@
+Here’s a **short, clean README version** with the **updated folder structure**, focused on **what matters** and easy for reviewers to scan.
+
+---
+
+# Portfolio Website (React)
+
+A **responsive, Figma-driven portfolio website** built with **React** and **CSS Modules**, focused on **clean layout architecture, consistent alignment, and mobile-first responsiveness** across mobile, desktop, and 2K screens.
+
+---
+
+## ✨ Key Highlights
+
+* **Single content rail system** for consistent alignment across Header, Hero, and all sections
+* **Responsive navbar**
+
+  * Desktop grid-based nav
+  * Mobile hamburger menu with full-screen overlay
+  * Social icons included in mobile menu
+* **Hero section**
+
+  * Grid-based layout (2 columns → 1 column on mobile)
+  * Layered visuals (image, logo behind image, dotted overlay)
+  * Figma-matched typography and spacing
+* **No horizontal scroll**
+
+  * Fixed widths overridden on mobile
+  * Absolute elements safely constrained
+* **Scalable architecture**
+
+  * Grid for macro layout
+  * Flexbox for micro alignment
+  * No duplicated margins or rails
+
+---
+
+## 🧱 Layout System
+
+```css
+.content-rail {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+```
+
+* Rail controls width & centering only
+* Spacing handled at layout/component level
+* Decorative elements allowed to overflow on desktop only
+
+---
+
+## 📁 Updated Folder Structure
+
+```bash
+src/
+├── assets/
+│   ├── images/
+│   │   └── heroImg.png
+│   └── icons/
+│       ├── heroLogo.png
+│       ├── Dots.png
+│       ├── hamIcon.png
+│       └── social/
+│           ├── Github.png
+│           ├── Vector.png
+│           └── Figma.png
+│
+├── components/
+│   ├── organisms/
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.module.css
+│   │   ├── Hero/
+│   │   │   ├── Hero.jsx
+│   │   │   └── Hero.module.css
+│   │   └── MediaBar/
+│   │       ├── MediaBar.jsx
+│   │       └── MediaBar.module.css
+│
+├── layouts/
+│   └── MainLayout.jsx
+│
+├── pages/
+│   └── Home.jsx
+│
+├── routes/
+│   └── AppRoutes.jsx
+│
+├── styles/
+│   ├── global.css
+│   └── variable.css
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🛠 Tech Stack
+
+* React (Vite)
+* CSS Modules
+* Figma (design source)
+* Mobile-first responsive approach
+
+---
+
+## 🚧 Status
+
+* ✅ Header (desktop + mobile)
+* ✅ Hero section (desktop + mobile)
+* ⏳ Projects, Skills, About, Contact (next)
+
+---
+

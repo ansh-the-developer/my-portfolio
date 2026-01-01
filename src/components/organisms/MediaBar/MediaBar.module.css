@@ -1,0 +1,48 @@
+.media {
+  position: fixed;
+  top: 0;
+  left: 32px;
+
+  z-index: 20; /* must be above sticky header */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* vertical line */
+.line {
+  width: 1px;
+  height: 191px;
+  background: var(--color-gray);
+}
+
+/* icon wrapper = source of truth */
+.icon {
+  width: 21px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMPORTANT:
+   - no max-width
+   - no max-height
+   - no fixed width
+*/
+.icon img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* hide media bar on mobile */
+@media (max-width: 768px) {
+  .media {
+    display: none;
+  }
+}

@@ -1,0 +1,162 @@
+.header {
+  position: sticky;
+  top: 0;
+  height: 61px;
+  padding-top: 32px;
+  background-color: var(--color-bg);
+  z-index: 5;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* CONTENT RAIL - use .content-rail from global.css */
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-left: 171px;
+  padding-right: 171px;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* 2K screens */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+    padding-left: 240px;
+    padding-right: 240px;
+  }
+}
+
+/* left logo block */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* nav container */
+.nav {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 32px;
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+}
+
+/* base link style */
+.nav a {
+  text-decoration: none;
+  color: var(--color-gray);
+}
+
+/* hash symbol */
+.nav a span {
+  color: var(--color-primary);
+}
+
+/* active link text */
+.active {
+  color: var(--color-white);
+}
+
+/* language selector */
+.lang {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-gray);
+  cursor: pointer;
+}
+
+/* hamburger button */
+.hamBtn {
+  justify-self: end;
+  background: none;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .hamBtn {
+    display: block;
+  }
+}
+
+/* mobile menu overlay */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.closeBtn {
+  align-self: flex-end;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.mobileNav {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-family: "Fira Code", monospace;
+  font-size: 24px;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: var(--color-gray);
+}
+
+.mobileNav a span {
+  color: var(--color-primary);
+}
+
+.mobileLang {
+  margin-top: 32px;
+  color: var(--color-gray);
+}
+
+.mobileSocials {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.mobileSocials img {
+  width: 21px;
+  height: 20px;
+  cursor: pointer;
+}

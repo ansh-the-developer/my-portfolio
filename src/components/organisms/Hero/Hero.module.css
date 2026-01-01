@@ -1,0 +1,194 @@
+/* ---------------- HERO SECTION ---------------- */
+
+.hero {
+  padding-top: 64px;
+}
+
+/* two-column layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ---------------- LEFT ---------------- */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* LEFT TITLE */
+.title {
+  font-family: "Fira Code", monospace;
+  font-weight: 600; /* semi-bold */
+  font-size: 32px;
+  line-height: 42px;
+  width: 537px;
+  height: 84px;
+  color: var(--color-white);
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+/* LEFT SUBTITLE */
+.subtitle {
+  font-family: "Fira Code", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  width: 463px;
+  height: 50px;
+  color: var(--color-gray);
+}
+
+/* CTA BUTTON */
+.cta {
+  width: 148px;
+  height: 37px;
+  padding: 8px 8px;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* ---------------- RIGHT ---------------- */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* IMAGE WRAPPER */
+.imageWrap {
+  position: relative;
+  width: 457px;
+  height: 386px;
+}
+
+/* HERO IMAGE */
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* HERO LOGO (BEHIND IMAGE) */
+.heroLogo {
+  position: absolute;
+  top: 79px;
+  left: -9px;
+  width: 155px;
+  height: 155px;
+  z-index: 1;
+}
+
+/* DOTS (OVER IMAGE) */
+.dots {
+  position: absolute;
+  right: 17px;
+  bottom: 60px;
+  width: 84px;
+  height: 84px;
+  z-index: 3;
+}
+
+/* ---------------- BADGE ---------------- */
+
+.badge {
+  margin-top: 2px;
+  margin-left: 21px;
+  width: 365px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* BADGE ICON */
+.badgeDot {
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary);
+}
+
+/* BADGE TEXT */
+.badge span {
+  font-family: "Fira Code", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray);
+}
+
+.badge strong {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .title,
+  .subtitle {
+    width: 100%;
+    height: auto;
+  }
+
+  .left {
+    align-items: flex-start;
+  }
+
+  .right {
+    align-items: center;
+  }
+
+  .imageWrap {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .heroLogo {
+    top: 40px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .dots {
+    right: -10px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .badge {
+    margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+}
