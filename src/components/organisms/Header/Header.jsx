@@ -53,16 +53,16 @@ const Header = () => {
           </button>
 
           <nav className={styles.mobileNav}>
-            <a className={styles.active}>
+            <a href="#home" className={styles.active}>
               <span>#</span>home
             </a>
-            <a>
+            <a href="#projects">
               <span>#</span>works
             </a>
-            <a>
+            <a  href="#about-me">
               <span>#</span>about-me
             </a>
-            <a>
+            <a href="#contacts">
               <span>#</span>contacts
             </a>
             <div className={styles.mobileLang}>EN ▾</div>
