@@ -35,14 +35,14 @@ const About = () => {
     "I'm based in New Delhi, India",
     "I am a self-taught developer who loves to learn new things",
     "I enjoy hot cup of ginger tea while coding",
-    "I specialize in engineering high-fidelity HRMS suites and luxury e-commerce architectures",
+    "I specialize in engineering SaaS apps, internal systems (ITSM, ERP), e-commerce websites, and end-to-end business solutions across web and mobile platforms",
   ];
 
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Aman Joshi | Full Stack Software Engineer",
-    "description": "Information about Aman Joshi, an Indian full-stack software engineer specializing in SaaS HRMS systems, custom dashboards, and luxury Shopify/React custom storefronts.",
+    "description": "Information about Aman Joshi, an Indian full-stack software engineer specializing in SaaS applications, internal systems (ITSM, ERP), e-commerce websites, and end-to-end business solutions on web and mobile.",
     "mainEntity": {
       "@type": "Person",
       "name": "Aman Joshi",
@@ -53,9 +53,10 @@ const About = () => {
         "Supabase",
         "Chakra UI",
         "PostgreSQL",
-        "SaaS",
-        "HRMS Dashboard Development",
-        "Shopify Custom Cart Integration",
+        "SaaS Applications",
+        "Internal Systems (ITSM, ERP)",
+        "E-commerce Websites",
+        "End-to-End Business Solutions",
         "Progressive Web Apps"
       ],
       "address": {
@@ -71,7 +72,7 @@ const About = () => {
     <Box as="section" pt={8} pb={16}>
       <MetaTags
         title="About Aman Joshi | Full Stack Software Engineer"
-        description="Learn more about Aman Joshi, a self-taught software developer based in New Delhi / Uttarakhand, India. Specializing in high-performance HRMS platforms, e-commerce integrations, and React dashboard engineering."
+        description="Learn more about Aman Joshi, a self-taught software developer based in New Delhi / Uttarakhand, India. Specializing in SaaS apps, internal systems (ITSM, ERP), e-commerce websites, and end-to-end business solutions."
         schema={aboutSchema}
       />
       <VStack align="stretch" spacing={10}>

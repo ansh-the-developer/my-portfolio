@@ -12,9 +12,13 @@ import ajLogo from "../../../../public/favicon.png";
 
 const PwaDownloadModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isIOS, setIsIOS] = useState(false);
 
   useEffect(() => {
+    setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream);
+
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
@@ -41,6 +45,7 @@ const PwaDownloadModal = () => {
 
   const handleClose = () => {
     setIsOpen(false);
+    setShowInstructions(false);
   };
 
   const handleInstall = async () => {
@@ -51,10 +56,7 @@ const PwaDownloadModal = () => {
       setDeferredPrompt(null);
       setIsOpen(false);
     } else {
-      alert(
-        "For manual installation:\n- Desktop Chrome/Edge: Click the install icon in the URL search bar.\n- Safari iOS: Tap Share -> 'Add to Home Screen'.\n- Mobile Chrome: Tap menu (3 dots) -> 'Install App'."
-      );
-      setIsOpen(false);
+      setShowInstructions(true);
     }
   };
 
@@ -110,54 +112,111 @@ const PwaDownloadModal = () => {
             />
           </Flex>
 
-          <Heading
-            as="h3"
-            fontSize="lg"
-            color="white"
-            fontFamily='"Fira Code", monospace'
-          >
-            Get the App
-          </Heading>
+          {showInstructions ? (
+            <>
+              <Heading
+                as="h3"
+                fontSize="md"
+                color="white"
+                fontFamily='"Fira Code", monospace'
+                textAlign="left"
+                mb={2}
+              >
+                Installation Steps:
+              </Heading>
+              <VStack align="stretch" spacing={3} textAlign="left" py={2}>
+                {isIOS ? (
+                  <>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      1. Tap the <Box as="span" color="purple.400" fontWeight="bold">Share</Box> button in Safari.
+                    </Text>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      2. Scroll down and select <Box as="span" color="purple.400" fontWeight="bold">"Add to Home Screen"</Box>.
+                    </Text>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      3. Tap <Box as="span" color="purple.400" fontWeight="bold">Add</Box> in the top right to complete installation.
+                    </Text>
+                  </>
+                ) : (
+                  <>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      1. Tap your browser's menu button (<Box as="span" color="purple.400" fontWeight="bold">3 dots</Box>).
+                    </Text>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      2. Select <Box as="span" color="purple.400" fontWeight="bold">"Install App"</Box> or <Box as="span" color="purple.400" fontWeight="bold">"Add to Home Screen"</Box>.
+                    </Text>
+                    <Text fontFamily='"Fira Code", monospace' fontSize="xs" color="gray.300">
+                      3. Confirm the prompt to install the app on your device.
+                    </Text>
+                  </>
+                )}
+              </VStack>
+              <Button
+                h="36px"
+                bg="purple.500"
+                color="white"
+                fontFamily='"Fira Code", monospace'
+                fontSize="xs"
+                borderRadius="0"
+                onClick={handleClose}
+                _hover={{ bg: "purple.600" }}
+                mt={4}
+              >
+                Got It
+              </Button>
+            </>
+          ) : (
+            <>
+              <Heading
+                as="h3"
+                fontSize="lg"
+                color="white"
+                fontFamily='"Fira Code", monospace'
+              >
+                Get the App
+              </Heading>
 
-          <Text
-            fontFamily='"Fira Code", monospace'
-            fontSize="xs"
-            color="gray.400"
-            lineHeight="1.6"
-          >
-            Add this portfolio to your home screen for quick offline access, full-screen view, and app-like performance!
-          </Text>
+              <Text
+                fontFamily='"Fira Code", monospace'
+                fontSize="xs"
+                color="gray.400"
+                lineHeight="1.6"
+              >
+                Add this portfolio to your home screen for quick offline access, full-screen view, and app-like performance!
+              </Text>
 
-          <Flex gap={3} mt={4}>
-            <Button
-              flex="1"
-              h="36px"
-              bg="purple.500"
-              color="white"
-              fontFamily='"Fira Code", monospace'
-              fontSize="xs"
-              borderRadius="0"
-              onClick={handleInstall}
-              _hover={{ bg: "purple.600" }}
-            >
-              Download App
-            </Button>
-            <Button
-              flex="1"
-              h="36px"
-              bg="transparent"
-              border="1px solid"
-              borderColor="gray.600"
-              color="white"
-              fontFamily='"Fira Code", monospace'
-              fontSize="xs"
-              borderRadius="0"
-              onClick={handleClose}
-              _hover={{ bg: "gray.800" }}
-            >
-              Not Now
-            </Button>
-          </Flex>
+              <Flex gap={3} mt={4}>
+                <Button
+                  flex="1"
+                  h="36px"
+                  bg="purple.500"
+                  color="white"
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="xs"
+                  borderRadius="0"
+                  onClick={handleInstall}
+                  _hover={{ bg: "purple.600" }}
+                >
+                  Download App
+                </Button>
+                <Button
+                  flex="1"
+                  h="36px"
+                  bg="transparent"
+                  border="1px solid"
+                  borderColor="gray.600"
+                  color="white"
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="xs"
+                  borderRadius="0"
+                  onClick={handleClose}
+                  _hover={{ bg: "gray.800" }}
+                >
+                  Not Now
+                </Button>
+              </Flex>
+            </>
+          )}
         </VStack>
       </Box>
     </Box>

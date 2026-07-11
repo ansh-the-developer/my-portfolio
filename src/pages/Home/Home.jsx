@@ -16,7 +16,7 @@ const Home = () => {
       "url": "https://amanthedeveloper.netlify.app/",
       "image": "https://amanthedeveloper.netlify.app/aj_logo_512.png",
       "jobTitle": "Full Stack Software Developer",
-      "description": "Professional Full Stack Software Developer specializing in high-fidelity HRMS systems, custom dashboards, and luxury e-commerce platforms.",
+      "description": "Professional Full Stack Software Developer specializing in SaaS apps, internal systems (ITSM, ERP), e-commerce websites, and end-to-end business solutions across web and mobile platforms.",
       "worksFor": {
         "@type": "Organization",
         "name": "Workflare"
@@ -49,7 +49,7 @@ const Home = () => {
     <>
       <MetaTags
         title="Aman Joshi | Full Stack Software Developer Portfolio"
-        description="Portfolio of Aman Joshi - professional React, Node, and Supabase developer. Specializing in high-fidelity HRMS suites, custom business dashboards, and luxury e-commerce storefronts in Uttarakhand, India."
+        description="Portfolio of Aman Joshi - professional React, Node, and Supabase developer. Specializing in high-fidelity HRMS suites, SaaS applications, internal systems (ITSM, ERP), and e-commerce websites (web & mobile apps) across Uttarakhand, India."
         schema={homeSchemas}
       />
       <Hero />
