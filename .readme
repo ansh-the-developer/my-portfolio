@@ -1,37 +1,27 @@
-Here’s a **short, clean README version** with the **updated folder structure**, focused on **what matters** and easy for reviewers to scan.
+That README is **partially outdated** based on everything we've built in this session. Here's the fully updated version reflecting the current state:
 
----
+***
 
-# Portfolio Website (React)
+Yes, that README is outdated. Here's the **fully updated version**:
 
-A **responsive, Figma-driven portfolio website** built with **React** and **CSS Modules**, focused on **clean layout architecture, consistent alignment, and mobile-first responsiveness** across mobile, desktop, and 2K screens.
+***
 
----
+# Portfolio Website (React + Chakra UI)
+
+A **responsive, Figma-driven portfolio website** built with **React**, **CSS Modules**, and **Chakra UI**, focused on clean layout architecture, consistent alignment, and mobile-first responsiveness.
+
+***
 
 ## ✨ Key Highlights
 
-* **Single content rail system** for consistent alignment across Header, Hero, and all sections
-* **Responsive navbar**
+- **Single content rail system** for consistent alignment across all sections
+- **Responsive navbar** — desktop grid nav, mobile hamburger with full-screen overlay
+- **Hero section** — 2-column grid, layered visuals, Figma-matched typography
+- **Quote section** — CSS Grid 3-row layout, author box seamlessly merged bottom-right
+- **Chakra UI** adopted from Projects onwards — responsive props, SimpleGrid, Flex, Box
+- **No horizontal scroll** — fixed widths overridden on mobile, absolute elements safely constrained
 
-  * Desktop grid-based nav
-  * Mobile hamburger menu with full-screen overlay
-  * Social icons included in mobile menu
-* **Hero section**
-
-  * Grid-based layout (2 columns → 1 column on mobile)
-  * Layered visuals (image, logo behind image, dotted overlay)
-  * Figma-matched typography and spacing
-* **No horizontal scroll**
-
-  * Fixed widths overridden on mobile
-  * Absolute elements safely constrained
-* **Scalable architecture**
-
-  * Grid for macro layout
-  * Flexbox for micro alignment
-  * No duplicated margins or rails
-
----
+***
 
 ## 🧱 Layout System
 
@@ -43,45 +33,65 @@ A **responsive, Figma-driven portfolio website** built with **React** and **CSS 
 }
 ```
 
-* Rail controls width & centering only
-* Spacing handled at layout/component level
-* Decorative elements allowed to overflow on desktop only
+***
 
----
-
-## 📁 Updated Folder Structure
+## 📁 Current Folder Structure
 
 ```bash
 src/
 ├── assets/
 │   ├── images/
-│   │   └── heroImg.png
+│   │   ├── heroImg.png
+│   │   └── aboutImg.png
 │   └── icons/
 │       ├── heroLogo.png
 │       ├── Dots.png
+│       ├── Line.png
+│       ├── Rect26.png
+│       ├── quoteIcon.png
 │       ├── hamIcon.png
+│       ├── discord.png
+│       ├── mail.png
 │       └── social/
 │           ├── Github.png
 │           ├── Vector.png
 │           └── Figma.png
 │
 ├── components/
-│   ├── organisms/
-│   │   ├── Header/
-│   │   │   ├── Header.jsx
-│   │   │   └── Header.module.css
-│   │   ├── Hero/
-│   │   │   ├── Hero.jsx
-│   │   │   └── Hero.module.css
-│   │   └── MediaBar/
-│   │       ├── MediaBar.jsx
-│   │       └── MediaBar.module.css
+│   └── organisms/
+│       ├── Header/
+│       │   ├── Header.jsx
+│       │   └── Header.module.css
+│       ├── Hero/
+│       │   ├── Hero.jsx
+│       │   └── Hero.module.css
+│       ├── MediaBar/
+│       │   ├── MediaBar.jsx
+│       │   └── MediaBar.module.css
+│       ├── Quote/
+│       │   ├── Quote.jsx
+│       │   └── Quote.module.css
+│       ├── Projects/
+│       │   └── Projects.jsx
+│       ├── Skills/
+│       │   └── Skills.jsx
+│       ├── About/
+│       │   └── About.jsx
+│       ├── Contacts/
+│       │   └── Contacts.jsx
+│       └── Footer/
+│           └── Footer.jsx
 │
 ├── layouts/
 │   └── MainLayout.jsx
 │
 ├── pages/
-│   └── Home.jsx
+│   ├── Home/
+│   │   └── Home.jsx
+│   ├── Projects/
+│   │   └── ProjectsPage.jsx
+│   └── About/
+│       └── AboutPage.jsx
 │
 ├── routes/
 │   └── AppRoutes.jsx
@@ -94,22 +104,33 @@ src/
 └── main.jsx
 ```
 
----
+***
 
 ## 🛠 Tech Stack
 
-* React (Vite)
-* CSS Modules
-* Figma (design source)
-* Mobile-first responsive approach
+- React (Vite)
+- CSS Modules (Header, Hero, MediaBar, Quote)
+- Chakra UI v3 (Projects, Skills, About, Contacts, Footer)
+- react-icons
+- react-router-dom
+- Figma (design source)
 
----
+***
 
 ## 🚧 Status
 
-* ✅ Header (desktop + mobile)
-* ✅ Hero section (desktop + mobile)
-* ⏳ Projects, Skills, About, Contact (next)
-
----
-
+| Section | Status |
+|---|---|
+| Header (desktop + mobile) | ✅ Done |
+| Hero | ✅ Done |
+| MediaBar | ✅ Done |
+| Quote | ✅ Done |
+| Projects (home) | ✅ Boilerplate |
+| Skills | ✅ Boilerplate |
+| About Me | ✅ Boilerplate |
+| Contacts | ✅ Boilerplate |
+| Footer | ✅ Boilerplate |
+| Routing (/, /projects, /about) | ✅ Wired |
+| ProjectsPage | ⏳ Needs content |
+| AboutPage | ⏳ Needs content |
+| Pixel-perfect finishing | ⏳ Pending |

@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import lineImg from "../../../assets/icons/Line.png";
 import aboutImg from "../../../assets/images/aboutImg.png";
+import { Link as RouterLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -57,8 +58,9 @@ const About = () => {
             fontFamily='"Fira Code", monospace'
             fontSize="sm"
             color="gray.300"
+            lineHeight="1.6"
           >
-            Hello, I&apos;m Aman!
+            Hello, I&apos;m Aman Joshi!
           </Text>
 
           <Text
@@ -66,10 +68,9 @@ const About = () => {
             fontFamily='"Fira Code", monospace'
             fontSize="sm"
             color="gray.300"
+            lineHeight="1.6"
           >
-            I&apos;m a self-taught full-stack web developer based in Haryana,
-            India. I build responsive web applications and clean UIs, focusing
-            on modern HRMS and enterprise systems.
+            I&apos;m a Frontend Engineer with 4 years of experience building enterprise SaaS applications, workflow automation platforms, and scalable user interfaces using React.js, Next.js, TypeScript, and modern frontend architecture.
           </Text>
 
           <Text
@@ -77,20 +78,22 @@ const About = () => {
             fontFamily='"Fira Code", monospace'
             fontSize="sm"
             color="gray.300"
+            lineHeight="1.6"
           >
-            Transforming ideas into usable interfaces has been my passion for
-            years. I enjoy designing component-driven React apps, integrating
-            scalable backends, and continuously learning new tools and
-            frameworks.
+            Throughout my career, I have contributed to approximately 108 production releases across enterprise products serving 100+ business customers, developing reusable design systems with Atomic Design and Chakra UI.
           </Text>
 
           <Button
+            as={RouterLink}
+            to="/about"
             mt={4}
             variant="outline"
             borderColor="purple.400"
             color="white"
             fontFamily='"Fira Code", monospace'
             size="sm"
+            borderRadius="0"
+            _hover={{ bg: "purple.900" }}
           >
             Read more ⟶
           </Button>
@@ -104,7 +107,7 @@ const About = () => {
         >
           <Image
             src={aboutImg}
-            alt="About Aman"
+            alt="About Aman Joshi"
             maxW={{ base: "260px", md: "320px", lg: "360px" }}
             objectFit="cover"
           />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 import heroImg from "../../../assets/images/heroImg.png";
 import heroLogo from "../../../assets/icons/heroLogo.png";
@@ -19,7 +20,38 @@ const Hero = () => {
               He crafts responsive websites where technologies meet creativity
             </p>
 
-            <button className={styles.cta}>Contact me!!</button>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <Link to="/contact" className={styles.cta} style={{ display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+                Contact me!!
+              </Link>
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent("open-resume-gatekeeper"))}
+                className={styles.cta}
+                style={{
+                  borderColor: "var(--color-gray)",
+                  color: "var(--color-gray)",
+                  width: "148px",
+                  height: "37px",
+                  padding: "8px 8px",
+                  background: "transparent",
+                  fontFamily: '"Fira Code", monospace',
+                  fontSize: "16px",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  transition: "border-color 0.2s, color 0.2s",
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.borderColor = "var(--color-white)";
+                  e.target.style.color = "var(--color-white)";
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.borderColor = "var(--color-gray)";
+                  e.target.style.color = "var(--color-gray)";
+                }}
+              >
+                Download CV
+              </button>
+            </div>
           </div>
 
           {/* RIGHT SIDE */}

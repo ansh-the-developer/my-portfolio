@@ -15,23 +15,23 @@ import squareImg from "../../../assets/icons/Rect26.png"; // optional
 const skillsData = [
   {
     title: "Languages",
-    items: ["TypeScript", "Lua", "Python", "JavaScript"],
+    items: ["TypeScript", "JavaScript", "HTML5", "CSS3"],
   },
   {
-    title: "Databases",
-    items: ["SQLite", "PostgreSQL", "Mongo"],
+    title: "Frameworks & Libs",
+    items: ["React.js", "Next.js", "React Query", "Redux Toolkit"],
   },
   {
-    title: "Tools",
-    items: ["VSCode", "Neovim", "Linux", "Figma", "Git"],
+    title: "Styling & Design",
+    items: ["Chakra UI", "Tailwind CSS", "Material UI", "Atomic Design"],
   },
   {
-    title: "Other",
-    items: ["HTML", "CSS", "SCSS", "REST"],
+    title: "Tools & DevOps",
+    items: ["Git", "GitHub", "Jira", "Jenkins", "Agile"],
   },
   {
-    title: "Frameworks",
-    items: ["React", "Node.js", "Express.js"],
+    title: "SaaS & Architecture",
+    items: ["Supabase", "REST APIs", "Nx", "Turborepo", "Cursor", "OpenAI", "Ollama"],
   },
 ];
 

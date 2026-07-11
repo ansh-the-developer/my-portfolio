@@ -1,16 +1,202 @@
-# React + Vite
+# Portfolio Website 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly responsive, pixel-perfect personal portfolio website built with **React 19**, **Vite**, **Chakra UI v3**, and **CSS Modules**. The layout is strictly based on a Figma design prototype, offering smooth alignment via a single content rail system, premium typography, mobile-first responsiveness, and a fully connected backend with serverless notifications.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Project Architecture & Directory Structure
 
-## React Compiler
+Below is the detailed, file-by-file folder structure of the codebase. Each directory and key file has a designated role to maintain modularity and separation of concerns.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+portfolio/
+├── .env                        # Local environment variables containing Supabase URL and Anon Key (gitignored)
+├── .env.example                # Template for environment variables
+├── .gitignore                  # Git exclude patterns
+├── eslint.config.js            # Code syntax linting configurations
+├── index.html                  # Core HTML structure template
+├── package.json                # Project dependencies, scripts, and metadata
+├── vite.config.js              # Vite compiler and React plugin setup
+├── public/                     # Static assets served directly
+│   └── Aman_Joshi_Resume.pdf   # The actual verified PDF resume document
+├── src/
+│   ├── App.jsx                 # Entry root application component rendering layouts and providers
+│   ├── main.jsx                # DOM mounting point configuring ChakraProvider and AppRoot
+│   ├── assets/                 # Media assets processed by the Vite bundler
+│   │   ├── icons/              # UI vectors, shapes, and utility icons
+│   │   │   ├── Dots.png        # Dot grid graphic assets
+│   │   │   ├── Line.png        # Section title divider line
+│   │   │   └── social/         # Social network platform icons (Figma, GitHub, LinkedIn, etc.)
+│   │   └── images/             # Photographic raster graphics
+│   │       ├── aboutImg.png    # About page profile graphics
+│   │       └── heroImg.png     # Hero section main design graphics
+│   ├── components/             # Reusable UI component architecture
+│   │   └── organisms/          # Main structural components/sections
+│   │       ├── About.jsx/      # About section homepage container
+│   │       │   └── About.jsx
+│   │       ├── Contacts/       # Contacts card homepage container
+│   │       │   └── Contacts.jsx
+│   │       ├── Footer/         # Footer with media links and copyright
+│   │       │   └── Footer.jsx
+│   │       ├── Header/         # Responsive navigation header containing hamburger mobile drawers
+│   │       │   ├── Header.jsx
+│   │       │   └── Header.module.css
+│   │       ├── Hero/           # Introductory greeting block and main CTA buttons
+│   │       │   ├── Hero.jsx
+│   │       │   └── Hero.module.css
+│   │       ├── MediaBar/       # Floating left-docked social profile bar
+│   │       │   ├── MediaBar.jsx
+│   │       │   └── MediaBar.module.css
+│   │       ├── Projects/       # Featured home projects section
+│   │       │   └── Projects.jsx
+│   │       ├── Quote/          # Centered quotes design component
+│   │       │   ├── Quote.jsx
+│   │       │   └── Quote.module.css
+│   │       ├── ResumeGatekeeper/ # Modal gating resume downloads behind a lead capture form
+│   │       │   └── ResumeGatekeeper.jsx
+│   │       └── Skills/         # Categorized skills listing grids
+│   │           └── Skills.jsx
+│   ├── data/                   # Centralized data structures
+│   │   └── projectsData.js     # Master client work, SaaS apps, and demo projects listing database
+│   ├── layouts/                # Global layout templates
+│   │   └── MainLayout.jsx      # Groups Header, MediaBar, main content pages, and Footer
+│   ├── pages/                  # Views linked to router paths
+│   │   ├── About/              # Full profile page view + fun facts grid (About.jsx)
+│   │   ├── Admin/              # Moderator login and administration dashboard views
+│   │   │   ├── Dashboard.jsx   # Stats grid, searches, and moderation lists for quotes and downloads
+│   │   │   └── Login.jsx       # Admin portal auth sign-in interface
+│   │   ├── Contact/            # Dedicated contact page view + quote estimate forms (ContactPage.jsx)
+│   │   └── Projects/           # Detailed projects explorer catalog layout (ProjectsPage.jsx)
+│   ├── routes/                 # Routing configurations
+│   │   └── AppRoutes.jsx       # React Router DOM mapping paths to pages
+│   ├── styles/                 # Styling assets
+│   │   ├── global.css          # Standard CSS resets, rail dimensions, and animations
+│   │   └── variable.css        # CSS variable tokens (color palettes, grids, breakpoints)
+│   └── utils/                  # Helper modules
+│       └── supabaseClient.js   # Centralized `@supabase/supabase-js` client wrapper
+```
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+The application relies on a modern front-end stack for fast builds, responsive grids, and structured UI components:
+
+*   **Core Framework**: [React 19](https://react.dev/) (utilizing concurrent rendering features).
+*   **Build System**: [Vite 7](https://vite.dev/) (delivering high-performance Hot Module Replacement).
+*   **Database**: [Supabase](https://supabase.com/) (PostgreSQL cloud database storing enquiries and download leads).
+*   **Design System**: [Chakra UI v3](https://chakra-ui.com/) (employed for layout, grid alignments, spacing variables, and responsive hooks).
+*   **Routing**: [React Router DOM v7](https://reactrouter.com/) (providing client-side dynamic page routing).
+*   **Icons**: [React Icons](https://react-icons.github.io/react-icons/) (delivering flexible vector symbols).
+*   **Styling System**: A hybrid structure utilizing:
+    *   **CSS Modules** (for structural isolates such as Header, Hero, MediaBar, and Quote to avoid class pollution).
+    *   **Vanilla CSS Custom Properties** (for layout widths, default background-colors, and brand colors).
+    *   **Chakra UI Box/Flex/Grid utility components** (for dynamic, stateful grids and mobile-first sizing).
+
+---
+
+## 📐 Layout & Styling Approach
+
+The codebase employs strict positioning strategies to avoid layout shifting and guarantee a premium presentation matching the design system:
+
+*   **Single Content Rail**: All main sections are bounded by a centered `.content-rail` class that caps width at `1024px` and maintains uniform lateral paddings.
+*   **No Horizontal Scroll**: Layout components utilize defensive styling, where absolute graphics and overflows are clipped (`overflow-x: hidden` on body), preventing horizontal drift on mobile devices.
+*   **CSS Theme Tokens**: Variable values are localized inside `variable.css` using custom CSS tokens (e.g. `--color-bg: #282C33`, `--color-primary: #C778DD`).
+*   **Mobile-First Responsive Grids**: Structural segments (such as Skills, Projects, and Contacts) use Chakra UI's `SimpleGrid` and responsive array props (e.g., `columns={{ base: 1, md: 2, xl: 3 }}`) to wrap elements on smaller screens.
+
+---
+
+## 🚦 Routing Mappings
+
+Client-side routes are mapped inside [AppRoutes.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/routes/AppRoutes.jsx):
+
+| Path | Element | Description |
+| :--- | :--- | :--- |
+| `/` | `Home.jsx` | Renders sections in sequence: Hero, Quote, Projects, Skills, About, Contacts. |
+| `/projects` | `ProjectsPage.jsx` | Full listing page categorizing client-projects, major-projects, and demo-projects. |
+| `/about` | `About.jsx` (Page) | Dedicated full about-me details page including personal fun facts grid. |
+| `/contact` | `ContactPage.jsx` | Dedicated "Get a Quote" client request form with input checks. |
+| `/login` | `Login.jsx` | Secure login view for administrative authentication. |
+| `/admin` | `Dashboard.jsx` | Moderator overview board mapping stats and moderation controls. |
+
+---
+
+## 🚀 Key Features Implemented
+
+### 1. Centralized Project Database
+* Created [projectsData.js](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/data/projectsData.js) mapping client works (Happy HR Systems, Beekend, Workflare, Amaranto Jewels, Abel Jewels, CMAK Homeopathy), major SaaS platforms (The Wild Oasis, Fast React Pizza), and demo applications.
+* Aligned action links to toggle live deployments or trigger dynamic credentials modals for private portals.
+
+### 2. Resume Gatekeeper Modal
+* Gated all download links to your CV behind an interactive lead capture modal: [ResumeGatekeeper.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/organisms/ResumeGatekeeper/ResumeGatekeeper.jsx).
+* Enforces Name, Email, and Phone fields as strictly mandatory with frontend format validations prior to allowing downloading of the actual resume document.
+* Automatically registers lead profiles in your database.
+
+### 3. Database & Admin Portal Integration
+* Set up a [supabaseClient.js](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/utils/supabaseClient.js) client interface using Vite environment configurations.
+* Created an [Admin Login](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/pages/Admin/Login.jsx) page requiring password authentication (restricting dashboard viewing to your administrator email: `amanjoshi16011997@gmail.com`).
+* Created a clean [Admin Dashboard](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/pages/Admin/Dashboard.jsx) with tab navigations to track stats, search, filter, and moderate (delete logs) both **Quote Enquiries** and **Resume Download Leads**.
+
+### 4. 100% Free Serverless Push Notifications (Gmail & Telegram)
+* Integrated Supabase Insert Database Webhooks linked to a serverless **Google Apps Script Web App** to dispatch alerts completely for free:
+  * **Gmail**: Formatted HTML notification sent to `amanjoshi16011997@gmail.com`.
+  * **Telegram**: Direct push alerts sent to your phone via your custom bot `t.me/ansh_portfolio_alerts_bot`.
+
+---
+
+## ⚡ Development & Deployment Commands
+
+The project configuration defines standard NPM commands mapping to Vite compiler actions:
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Run Local Development Server
+```bash
+npm run dev
+```
+Starts a local development server with Hot Module Replacement (HMR).
+
+### Build for Production
+```bash
+npm run build
+```
+Compiles and optimizes the React package into the static assets folder `/dist`.
+
+### Preview Production Build Locally
+```bash
+npm run preview
+```
+Runs a local server hosting the compiled build in `/dist` for verification before hosting.
+
+### Run Code Linter
+```bash
+npm run lint
+```
+Checks files using ESLint rules as configured in `eslint.config.js`.
+
+---
+
+## 📊 Current Project Status
+
+| Segment | Status | Notes |
+| :--- | :--- | :--- |
+| **Header (Desktop & Mobile Nav)** | ✅ Completed | Styled links, interactive menu drawer, and active state indicators. |
+| **Hero Landing Section** | ✅ Completed | Graphic elements, layouts, and CV Download action buttons styled. |
+| **MediaBar Social Dock** | ✅ Completed | Aligned floating list layout linking directly to user profiles. |
+| **Projects Previews (Home)** | ✅ Completed | Card lists displaying primary preview columns dynamically. |
+| **Skills Stack Lists** | ✅ Completed | Configured simple grids mapping your technical skills categories. |
+| **About Me Showcase** | ✅ Completed | Bio descriptions synchronized with verified resume experience. |
+| **Get a Quote Page (`/contact`)** | ✅ Completed | Form validation, loading indicators, database hook, and Bug Fixes. |
+| **Admin Dashboard (`/admin`)** | ✅ Completed | Gated moderator dashboard tracking quote requests and resume leads. |
+| **Serverless Notifications** | ✅ Completed | Configured Google Web App trigger webhooks for Gmail and Telegram. |
+
+---
+
+## 📚 Configuration Guides
+
+Detailed walkthroughs for backend configurations are available inside:
+*   [supabase_setup_guide.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/supabase_setup_guide.md) (Database tables, RLS Policies, secrets)
+*   [free_notifications_setup.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/free_notifications_setup.md) (Google Web App & Telegram bot config guide)

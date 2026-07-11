@@ -7,9 +7,8 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
+import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import lineImg from "../../../assets/icons/Line.png";
-import mailIcon from "../../../assets/icons/social/Email.png";    // adjust to your icons
-import discordIcon from "../../../assets/icons/social/Discord.png";
 
 const Contacts = () => {
   return (
@@ -59,9 +58,9 @@ const Contacts = () => {
             fontSize="sm"
             color="gray.300"
             mb={2}
+            lineHeight="1.6"
           >
-            I&apos;m interested in freelance opportunities. However, if you have
-            other request or question, don&apos;t hesitate to contact me.
+            I am open to freelance opportunities, contract roles, and full-stack positions. If you have any inquiries, suggestions, or just want to say hi, feel free to drop a message!
           </Text>
         </Box>
 
@@ -72,7 +71,7 @@ const Contacts = () => {
           bg="gray.900"
           px={6}
           py={4}
-          minW={{ base: "260px", md: "280px" }}
+          minW={{ base: "260px", md: "300px" }}
         >
           <Text
             fontFamily='"Fira Code", monospace'
@@ -86,24 +85,41 @@ const Contacts = () => {
 
           <VStack align="flex-start" spacing={3}>
             <HStack spacing={3}>
-              <Image src={discordIcon} alt="Discord" boxSize="18px" />
+              <Box color="purple.400">
+                <FaEnvelope size="16px" />
+              </Box>
               <Text
                 fontFamily='"Fira Code", monospace'
                 fontSize="sm"
                 color="gray.300"
               >
-                @aman#1234
+                amanjoshi16011997@gmail.com
               </Text>
             </HStack>
 
             <HStack spacing={3}>
-              <Image src={mailIcon} alt="Email" boxSize="18px" />
+              <Box color="purple.400">
+                <FaWhatsapp size="16px" />
+              </Box>
               <Text
                 fontFamily='"Fira Code", monospace'
                 fontSize="sm"
                 color="gray.300"
               >
-                aman@example.com
+                +91 8449503656
+              </Text>
+            </HStack>
+
+            <HStack spacing={3}>
+              <Box color="purple.400">
+                <FaMapMarkerAlt size="16px" />
+              </Box>
+              <Text
+                fontFamily='"Fira Code", monospace'
+                fontSize="sm"
+                color="gray.300"
+              >
+                India
               </Text>
             </HStack>
           </VStack>

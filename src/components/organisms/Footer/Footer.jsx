@@ -5,7 +5,7 @@ import {
   HStack,
   IconButton,
 } from "@chakra-ui/react";
-import { FaGithub, FaFigma, FaDiscord } from "react-icons/fa"; // or any icons you prefer
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"; // or any icons you prefer
 
 const Footer = () => {
   return (
@@ -58,7 +58,8 @@ const Footer = () => {
           <HStack spacing={4} justify={{ base: "flex-start", md: "flex-end" }}>
             <IconButton
               as="a"
-              href="https://github.com/your-handle"
+              href="https://github.com/ansh-the-developer"
+              target="_blank"
               aria-label="GitHub"
               icon={<FaGithub />}
               variant="ghost"
@@ -67,16 +68,18 @@ const Footer = () => {
             />
             <IconButton
               as="a"
-              href="https://figma.com/@your-handle"
-              aria-label="Figma"
-              icon={<FaFigma />}
+              href="https://www.linkedin.com/in/aman-joshi-engineer"
+              target="_blank"
+              aria-label="LinkedIn"
+              icon={<FaLinkedin />}
               variant="ghost"
               size="sm"
               color="gray.300"
             />
             <IconButton
               as="a"
-              href="#"
+              href="https://discord.com"
+              target="_blank"
               aria-label="Discord"
               icon={<FaDiscord />}
               variant="ghost"
@@ -94,7 +97,7 @@ const Footer = () => {
           fontSize="xs"
           color="gray.500"
         >
-          © {new Date().getFullYear()} Made by Aman
+          © {new Date().getFullYear()} Made by Aman. All rights reserved.
         </Text>
       </Box>
     </Box>

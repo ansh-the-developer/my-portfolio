@@ -8,11 +8,17 @@ const MediaBar = () => {
     <aside className={styles.media}>
       <div className={styles.line} />
 
-      <img src={github} alt="github" />
+      <a href="https://github.com/ansh-the-developer" target="_blank" rel="noreferrer">
+        <img src={github} alt="github" />
+      </a>
 
-      <img src={vector} alt="vector" />
+      <a href="https://www.linkedin.com/in/aman-joshi-engineer" target="_blank" rel="noreferrer">
+        <img src={vector} alt="linkedin" />
+      </a>
 
-      <img src={figma} alt="figma" />
+      <a href="https://figma.com" target="_blank" rel="noreferrer">
+        <img src={figma} alt="figma" />
+      </a>
     </aside>
   );
 };
