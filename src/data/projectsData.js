@@ -42,14 +42,47 @@ import happyhrLogin from "../assets/images/projects/happyhr_login.png";
 import happyhr2fa from "../assets/images/projects/happyhr_2fa.png";
 import happyhrAdmin from "../assets/images/projects/happyhr_admin.png";
 import happyhrMaster from "../assets/images/projects/happyhr_master.png";
+import cmak1 from "../assets/images/projects/cmak_1.jpg";
+import cmak2 from "../assets/images/projects/cmak_2.png";
+import cmak3 from "../assets/images/projects/cmak_3.png";
+import cmak4 from "../assets/images/projects/cmak_4.png";
+import beekend1 from "../assets/images/projects/beekend_1.png";
+import beekend2 from "../assets/images/projects/beekend_2.png";
+import beekend3 from "../assets/images/projects/beekend_3.png";
+import beekend4 from "../assets/images/projects/beekend_4.png";
+import beekend5 from "../assets/images/projects/beekend_5.png";
+import beekend6 from "../assets/images/projects/beekend_6.png";
+import jewelry1 from "../assets/images/projects/jewelry_1.png";
+import jewelry2 from "../assets/images/projects/jewelry_2.png";
+import jewelry3 from "../assets/images/projects/jewelry_3.png";
+import jewelry4 from "../assets/images/projects/jewelry_4.png";
+import jewelry5 from "../assets/images/projects/jewelry_5.png";
+import amaranto1 from "../assets/images/projects/amaranto_1.jpg";
+import amaranto2 from "../assets/images/projects/amaranto_2.png";
+import amaranto3 from "../assets/images/projects/amaranto_3.png";
+import amaranto4 from "../assets/images/projects/amaranto_4.jpg";
+import amaranto5 from "../assets/images/projects/amaranto_5.png";
+import workflare1 from "../assets/images/projects/workflare_1.png";
+import workflare2 from "../assets/images/projects/workflare_2.png";
+import workflare3 from "../assets/images/projects/workflare_3.png";
+import workflare4 from "../assets/images/projects/workflare_4.png";
+import workflare5 from "../assets/images/projects/workflare_5.png";
+import workflare6 from "../assets/images/projects/workflare_6.png";
 
 export const clientProjects = [
   {
     title: "Workflare",
     tech: "React Node.js Express MongoDB",
     desc: "A premium business landing and services website for a web development agency.",
-    image: workflareImg,
-    screenshots: [workflareImg],
+    image: workflare1,
+    screenshots: [
+      workflare1,
+      workflare2,
+      workflare3,
+      workflare4,
+      workflare5,
+      workflare6
+    ],
     liveUrl: "https://workflare.in/",
     githubUrl: null,
     requiresAuth: false,
@@ -58,8 +91,14 @@ export const clientProjects = [
     title: "Amaranto Jewels",
     tech: "React Tailwind Shopify Custom-Storefront",
     desc: "A luxury e-commerce platform for high-end designer jewelry collections.",
-    image: jewelryImg,
-    screenshots: [jewelryImg],
+    image: amaranto1,
+    screenshots: [
+      amaranto1,
+      amaranto2,
+      amaranto3,
+      amaranto4,
+      amaranto5
+    ],
     liveUrl: "https://amarantojewels.com/",
     githubUrl: null,
     requiresAuth: false,
@@ -68,8 +107,14 @@ export const clientProjects = [
     title: "Abel Jewels",
     tech: "React Tailwind Shopify Custom-Cart",
     desc: "An elegant showcase and online store for bespoke fine jewelry.",
-    image: jewelryImg,
-    screenshots: [jewelryImg],
+    image: jewelry1,
+    screenshots: [
+      jewelry1,
+      jewelry2,
+      jewelry3,
+      jewelry5,
+      jewelry4
+    ],
     liveUrl: "https://abeljewels.com/",
     githubUrl: null,
     requiresAuth: false,
@@ -77,9 +122,16 @@ export const clientProjects = [
   {
     title: "Beekend Agency HRMS",
     tech: "Node.js Express PostgreSQL REST-API",
-    desc: "SaaS client project live. Scalable backend service and database management API built for client agencies.",
-    image: workflareImg,
-    screenshots: [workflareImg],
+    desc: "SaaS client project live. A restaurant-specific HRMS application featuring scalable backend services and database management APIs.",
+    image: beekend2,
+    screenshots: [
+      beekend1,
+      beekend2,
+      beekend3,
+      beekend4,
+      beekend5,
+      beekend6
+    ],
     liveUrl: "https://beekend.workflare.in/",
     githubUrl: null,
     requiresAuth: false,
@@ -88,8 +140,13 @@ export const clientProjects = [
     title: "CMAK Homeopathy",
     tech: "HTML CSS JavaScript Netlify",
     desc: "Landing page and consultation portal for CMAK Homeopathy Clinic.",
-    image: dashboardImg,
-    screenshots: [dashboardImg],
+    image: cmak1,
+    screenshots: [
+      cmak1,
+      cmak2,
+      cmak3,
+      cmak4
+    ],
     liveUrl: "https://cmakhomeopathy.netlify.app/",
     githubUrl: null,
     requiresAuth: false,

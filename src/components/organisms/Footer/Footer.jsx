@@ -27,13 +27,6 @@ const Footer = () => {
             >
               Aman
             </Text>
-            <Text
-              fontFamily='"Fira Code", monospace'
-              fontSize="sm"
-              color="gray.400"
-            >
-              aman@example.com
-            </Text>
           </HStack>
 
           <Text
@@ -90,14 +83,22 @@ const Footer = () => {
         </Box>
       </Flex>
 
-      {/* COPYRIGHT – centered below */}
+      {/* COPYRIGHT & CREDITS – centered below */}
       <Box mt={6} textAlign="center">
         <Text
           fontFamily='"Fira Code", monospace'
           fontSize="xs"
           color="gray.500"
+          mb={1}
         >
-          © {new Date().getFullYear()} Made by Aman. All rights reserved.
+          © {new Date().getFullYear()} Developed by Aman. All rights reserved.
+        </Text>
+        <Text
+          fontFamily='"Fira Code", monospace'
+          fontSize="xs"
+          color="gray.600"
+        >
+          Figma Design Inspiration: Elias from Ukraine.
         </Text>
       </Box>
     </Box>
