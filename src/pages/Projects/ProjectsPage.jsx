@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import { clientProjects, majorProjects, demoProjects } from "../../data/projectsData";
 
-const ProjectCard = ({ title, tech, desc, liveUrl, githubUrl, requiresAuth, image, onOpenScreenshots }) => (
+const ProjectCard = ({ title, tech, desc, liveUrl, githubUrl, requiresAuth, image, screenshots, onOpenScreenshots }) => (
   <Box
     border="1px solid"
     borderColor="gray.600"
@@ -110,20 +110,18 @@ const ProjectCard = ({ title, tech, desc, liveUrl, githubUrl, requiresAuth, imag
           </Button>
         )}
 
-        {requiresAuth && (
-          <Button
-            size="sm"
-            variant="outline"
-            borderColor="gray.500"
-            color="gray.200"
-            fontFamily='"Fira Code", monospace'
-            borderRadius="0"
-            _hover={{ bg: "gray.850" }}
-            onClick={() => onOpenScreenshots({ title, desc })}
-          >
-            Screenshots
-          </Button>
-        )}
+        <Button
+          size="sm"
+          variant="outline"
+          borderColor="gray.500"
+          color="gray.200"
+          fontFamily='"Fira Code", monospace'
+          borderRadius="0"
+          _hover={{ bg: "gray.850" }}
+          onClick={() => onOpenScreenshots({ title, desc, image, screenshots })}
+        >
+          Screenshots
+        </Button>
       </HStack>
     </VStack>
   </Box>
@@ -149,6 +147,7 @@ const SectionTitle = ({ children }) => (
 const ProjectsPage = () => {
   const [activeProject, setActiveProject] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedScreenshot, setSelectedScreenshot] = useState(null);
 
   const handleOpenScreenshots = (project) => {
     setActiveProject(project);
@@ -158,6 +157,7 @@ const ProjectsPage = () => {
   const handleClose = () => {
     setActiveProject(null);
     setIsOpen(false);
+    setSelectedScreenshot(null);
   };
 
   return (
@@ -270,26 +270,41 @@ const ProjectsPage = () => {
                 ✕
               </Button>
             </Flex>
-            <VStack spacing={4} align="stretch" mb={4}>
-              <Box
-                h="200px"
-                bg="gray.800"
-                border="1px dashed"
-                borderColor="gray.500"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                color="gray.400"
-                fontFamily='"Fira Code", monospace'
-                fontSize="sm"
-                textAlign="center"
-                p={4}
-              >
-                [Screenshot Placeholder: Dashboard Overview]<br />
-                (Real screenshot will be loaded here once uploaded to Supabase Storage)
-              </Box>
-              <Text color="gray.300" fontFamily='"Fira Code", monospace' fontSize="sm">
-                This application requires authentication or backend configurations to run live. A gallery of actual client interface snapshots will display here shortly.
+            <VStack spacing={4} align="stretch" mb={4} maxH="55vh" overflowY="auto" pr={1}>
+              {activeProject?.screenshots && activeProject.screenshots.length > 0 ? (
+                activeProject.screenshots.map((img, idx) => (
+                  <Box
+                    key={idx}
+                    border="1px solid"
+                    borderColor="gray.700"
+                    bg="gray.850"
+                    overflow="hidden"
+                    cursor="pointer"
+                    _hover={{ opacity: 0.8 }}
+                    onClick={() => setSelectedScreenshot(img)}
+                  >
+                    <Image src={img} alt={`${activeProject.title} Screenshot ${idx + 1}`} w="100%" h="auto" objectFit="contain" />
+                  </Box>
+                ))
+              ) : activeProject?.image ? (
+                <Box
+                  border="1px solid"
+                  borderColor="gray.700"
+                  bg="gray.850"
+                  overflow="hidden"
+                  cursor="pointer"
+                  _hover={{ opacity: 0.8 }}
+                  onClick={() => setSelectedScreenshot(activeProject.image)}
+                >
+                  <Image src={activeProject.image} alt={activeProject.title} w="100%" h="auto" objectFit="contain" />
+                </Box>
+              ) : (
+                <Box h="180px" bg="gray.800" display="flex" alignItems="center" justifyContent="center" color="gray.500" fontSize="sm">
+                  No screenshots available.
+                </Box>
+              )}
+              <Text color="gray.350" fontFamily='"Fira Code", monospace' fontSize="xs" lineHeight="1.5">
+                {activeProject?.desc}
               </Text>
             </VStack>
             <Flex justify="flex-end">
@@ -306,6 +321,43 @@ const ProjectsPage = () => {
                 Close
               </Button>
             </Flex>
+          </Box>
+        </Box>
+      )}
+
+      {/* Lightbox / Zoomed Preview Modal */}
+      {selectedScreenshot && (
+        <Box
+          position="fixed"
+          top="0"
+          left="0"
+          w="100vw"
+          h="100vh"
+          bg="rgba(0, 0, 0, 0.95)"
+          zIndex="10000"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          p={4}
+          onClick={() => setSelectedScreenshot(null)}
+        >
+          <Box position="relative" maxW="90%" maxH="90%" onClick={(e) => e.stopPropagation()}>
+            <Image src={selectedScreenshot} alt="High Resolution Screenshot Preview" maxW="100%" maxH="80vh" objectFit="contain" />
+            <Button
+              position="absolute"
+              top="-40px"
+              right="0"
+              size="xs"
+              variant="outline"
+              borderColor="white"
+              color="white"
+              fontFamily='"Fira Code", monospace'
+              onClick={() => setSelectedScreenshot(null)}
+              borderRadius="0"
+              _hover={{ bg: "white", color: "black" }}
+            >
+              Close Preview ✕
+            </Button>
           </Box>
         </Box>
       )}

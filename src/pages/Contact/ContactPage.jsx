@@ -11,7 +11,7 @@ import {
   SimpleGrid,
   Spinner,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "../../utils/supabaseClient";
 
 const CustomField = ({ label, children, error }) => (
@@ -57,6 +57,23 @@ const CustomSelect = ({ value, onChange, options, name, placeholder }) => (
 );
 
 const ContactPage = () => {
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    const checkUnlocked = () => {
+      setUnlocked(localStorage.getItem("contact_details_unlocked") === "true");
+    };
+    checkUnlocked();
+    window.addEventListener("contact-details-unlocked", checkUnlocked);
+    return () => {
+      window.removeEventListener("contact-details-unlocked", checkUnlocked);
+    };
+  }, []);
+
+  const handleOpenGatekeeper = () => {
+    window.dispatchEvent(new Event("open-contact-gatekeeper"));
+  };
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -225,15 +242,31 @@ const ContactPage = () => {
             </Text>
 
             <Box borderLeft="2px solid" borderColor="purple.400" pl={4} py={1}>
-              <Text color="white" fontWeight="600" fontSize="xs" fontFamily='"Fira Code", monospace'>
+              <Text color="white" fontWeight="600" fontSize="xs" fontFamily='"Fira Code", monospace' mb={1}>
                 Direct Contact
               </Text>
-              <Text color="gray.400" fontSize="sm" fontFamily='"Fira Code", monospace'>
-                Email: amanjoshi16011997@gmail.com
-              </Text>
-              <Text color="gray.400" fontSize="sm" fontFamily='"Fira Code", monospace'>
-                Phone: +91 8449503656
-              </Text>
+              {unlocked ? (
+                <>
+                  <Text color="gray.400" fontSize="sm" fontFamily='"Fira Code", monospace' userSelect="all">
+                    Email: amanjoshi16011997@gmail.com
+                  </Text>
+                  <Text color="gray.400" fontSize="sm" fontFamily='"Fira Code", monospace' userSelect="all">
+                    Phone: +91 8449503656
+                  </Text>
+                </>
+              ) : (
+                <Text
+                  color="purple.300"
+                  fontSize="sm"
+                  fontFamily='"Fira Code", monospace'
+                  cursor="pointer"
+                  textDecoration="underline"
+                  _hover={{ color: "purple.200" }}
+                  onClick={handleOpenGatekeeper}
+                >
+                  [Verify credentials to view contact details]
+                </Text>
+              )}
             </Box>
           </VStack>
 

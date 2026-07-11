@@ -5,6 +5,43 @@ import hrmsImg from "../assets/images/projects/hrms.png";
 import travelImg from "../assets/images/projects/travel.png";
 import pizzaImg from "../assets/images/projects/pizza.png";
 import dashboardImg from "../assets/images/projects/dashboard.png";
+import trophymrleeImg from "../assets/images/projects/trophymrlee.png";
+import trophymrleeShopImg from "../assets/images/projects/trophymrlee_shop.png";
+import amanthedeveloper1 from "../assets/images/projects/amanthedeveloper_1.png";
+import amanthedeveloper2 from "../assets/images/projects/amanthedeveloper_2.png";
+import amanthedeveloper3 from "../assets/images/projects/amanthedeveloper_3.png";
+import amanthedeveloper4 from "../assets/images/projects/amanthedeveloper_4.png";
+import amanthedeveloper5 from "../assets/images/projects/amanthedeveloper_5.png";
+import amanthedeveloper6 from "../assets/images/projects/amanthedeveloper_6.png";
+import amanthedeveloper7 from "../assets/images/projects/amanthedeveloper_7.png";
+import weatheringcloudsImg from "../assets/images/projects/weatheringclouds.png";
+import worldwise1 from "../assets/images/projects/worldwise_1.jpg";
+import worldwise2 from "../assets/images/projects/worldwise_2.png";
+import worldwise3 from "../assets/images/projects/worldwise_3.png";
+import worldwise4 from "../assets/images/projects/worldwise_4.png";
+import worldwise5 from "../assets/images/projects/worldwise_5.png";
+import pizza1 from "../assets/images/projects/pizza_1.png";
+import pizza2 from "../assets/images/projects/pizza_2.png";
+import pizza3 from "../assets/images/projects/pizza_3.png";
+import pizza4 from "../assets/images/projects/pizza_4.png";
+import pizza5 from "../assets/images/projects/pizza_5.png";
+import wildoasis1 from "../assets/images/projects/wildoasis_1.png";
+import wildoasis2 from "../assets/images/projects/wildoasis_2.png";
+import wildoasis3 from "../assets/images/projects/wildoasis_3.png";
+import wildoasis4 from "../assets/images/projects/wildoasis_4.png";
+import wildoasis5 from "../assets/images/projects/wildoasis_5.png";
+import wildoasis6 from "../assets/images/projects/wildoasis_6.png";
+import wildoasis7 from "../assets/images/projects/wildoasis_7.png";
+import wildoasis8 from "../assets/images/projects/wildoasis_8.png";
+import happyhr1 from "../assets/images/projects/happyhr_1.png";
+import happyhr2 from "../assets/images/projects/happyhr_2.png";
+import happyhr3 from "../assets/images/projects/happyhr_3.png";
+import happyhr4 from "../assets/images/projects/happyhr_4.png";
+import happyhr5 from "../assets/images/projects/happyhr_5.png";
+import happyhrLogin from "../assets/images/projects/happyhr_login.png";
+import happyhr2fa from "../assets/images/projects/happyhr_2fa.png";
+import happyhrAdmin from "../assets/images/projects/happyhr_admin.png";
+import happyhrMaster from "../assets/images/projects/happyhr_master.png";
 
 export const clientProjects = [
   {
@@ -12,6 +49,7 @@ export const clientProjects = [
     tech: "React Node.js Express MongoDB",
     desc: "A premium business landing and services website for a web development agency.",
     image: workflareImg,
+    screenshots: [workflareImg],
     liveUrl: "https://workflare.in/",
     githubUrl: null,
     requiresAuth: false,
@@ -21,6 +59,7 @@ export const clientProjects = [
     tech: "React Tailwind Shopify Custom-Storefront",
     desc: "A luxury e-commerce platform for high-end designer jewelry collections.",
     image: jewelryImg,
+    screenshots: [jewelryImg],
     liveUrl: "https://amarantojewels.com/",
     githubUrl: null,
     requiresAuth: false,
@@ -30,6 +69,7 @@ export const clientProjects = [
     tech: "React Tailwind Shopify Custom-Cart",
     desc: "An elegant showcase and online store for bespoke fine jewelry.",
     image: jewelryImg,
+    screenshots: [jewelryImg],
     liveUrl: "https://abeljewels.com/",
     githubUrl: null,
     requiresAuth: false,
@@ -39,6 +79,7 @@ export const clientProjects = [
     tech: "Node.js Express PostgreSQL REST-API",
     desc: "SaaS client project live. Scalable backend service and database management API built for client agencies.",
     image: workflareImg,
+    screenshots: [workflareImg],
     liveUrl: "https://beekend.workflare.in/",
     githubUrl: null,
     requiresAuth: false,
@@ -48,6 +89,7 @@ export const clientProjects = [
     tech: "HTML CSS JavaScript Netlify",
     desc: "Landing page and consultation portal for CMAK Homeopathy Clinic.",
     image: dashboardImg,
+    screenshots: [dashboardImg],
     liveUrl: "https://cmakhomeopathy.netlify.app/",
     githubUrl: null,
     requiresAuth: false,
@@ -59,7 +101,18 @@ export const majorProjects = [
     title: "Happy HR Systems",
     tech: "React Chakra UI Supabase Redux-Toolkit",
     desc: "v2 of Beekend - Beta Testing. A robust SaaS HRMS platform containing employee management, payroll pipelines, and interactive dashboards.",
-    image: hrmsImg,
+    image: happyhr1,
+    screenshots: [
+      happyhrLogin,
+      happyhr2fa,
+      happyhr1,
+      happyhrAdmin,
+      happyhrMaster,
+      happyhr2,
+      happyhr3,
+      happyhr4,
+      happyhr5
+    ],
     liveUrl: "https://happyhrsystems.netlify.app/home",
     githubUrl: null,
     requiresAuth: true,
@@ -71,7 +124,17 @@ export const demoProjects = [
     title: "The Wild Oasis",
     tech: "React Styled-Components Supabase React-Query",
     desc: "Cabin booking and hotel administration system with comprehensive statistics dashboards.",
-    image: hrmsImg,
+    image: wildoasis1,
+    screenshots: [
+      wildoasis1,
+      wildoasis2,
+      wildoasis3,
+      wildoasis4,
+      wildoasis5,
+      wildoasis6,
+      wildoasis7,
+      wildoasis8
+    ],
     liveUrl: "https://the-wild-oasis-office.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/the-wild-oasis",
     requiresAuth: true,
@@ -80,7 +143,14 @@ export const demoProjects = [
     title: "Fast React Pizza Co.",
     tech: "React Tailwind Redux-Toolkit React-Router",
     desc: "Cozy pizza ordering dashboard featuring cart management, user profile lookup, and order priority tracking.",
-    image: pizzaImg,
+    image: pizza1,
+    screenshots: [
+      pizza1,
+      pizza2,
+      pizza3,
+      pizza4,
+      pizza5
+    ],
     liveUrl: "https://pizzafastreact.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/fast-react-pizza",
     requiresAuth: false,
@@ -89,7 +159,14 @@ export const demoProjects = [
     title: "WorldWise Travel Tracker",
     tech: "React CSS-Modules Leaflet-Maps",
     desc: "Map-based tracking application displaying visited cities and travel logs.",
-    image: travelImg,
+    image: worldwise1,
+    screenshots: [
+      worldwise1,
+      worldwise2,
+      worldwise3,
+      worldwise4,
+      worldwise5
+    ],
     liveUrl: "https://worldwiseadventuretracker.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/worldwise",
     requiresAuth: false,
@@ -98,7 +175,8 @@ export const demoProjects = [
     title: "Weathering Clouds",
     tech: "React CSS Weather-API",
     desc: "Interactive weather dashboard showing real-time conditions and 5-day forecasts.",
-    image: dashboardImg,
+    image: weatheringcloudsImg,
+    screenshots: [weatheringcloudsImg],
     liveUrl: "https://weatheringclouds.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/weathering-clouds",
     requiresAuth: false,
@@ -107,7 +185,16 @@ export const demoProjects = [
     title: "Aman the Developer",
     tech: "React Tailwind Framer-Motion",
     desc: "Personal developer portfolio and showcase built with custom animations.",
-    image: dashboardImg,
+    image: amanthedeveloper1,
+    screenshots: [
+      amanthedeveloper1,
+      amanthedeveloper2,
+      amanthedeveloper3,
+      amanthedeveloper4,
+      amanthedeveloper5,
+      amanthedeveloper6,
+      amanthedeveloper7
+    ],
     liveUrl: "https://amanthedeveloper.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/developer-portfolio",
     requiresAuth: false,
@@ -116,7 +203,8 @@ export const demoProjects = [
     title: "Trophy Mr Lee",
     tech: "HTML CSS JS Responsive",
     desc: "Responsive landing page about trophies, medals, and recognition solutions.",
-    image: dashboardImg,
+    image: trophymrleeImg,
+    screenshots: [trophymrleeImg, trophymrleeShopImg],
     liveUrl: "https://trophymrlee.netlify.app/",
     githubUrl: "https://github.com/ansh-the-developer/trophymrlee",
     requiresAuth: false,

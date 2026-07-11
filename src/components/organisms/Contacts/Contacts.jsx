@@ -7,10 +7,28 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import { FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import lineImg from "../../../assets/icons/Line.png";
 
 const Contacts = () => {
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    const checkUnlocked = () => {
+      setUnlocked(localStorage.getItem("contact_details_unlocked") === "true");
+    };
+    checkUnlocked();
+    window.addEventListener("contact-details-unlocked", checkUnlocked);
+    return () => {
+      window.removeEventListener("contact-details-unlocked", checkUnlocked);
+    };
+  }, []);
+
+  const handleOpenGatekeeper = () => {
+    window.dispatchEvent(new Event("open-contact-gatekeeper"));
+  };
+
   return (
     <Box as="section" id="contacts" mt={20} mb={24}>
       {/* Header: #contacts + line */}
@@ -88,26 +106,56 @@ const Contacts = () => {
               <Box color="purple.400">
                 <FaEnvelope size="16px" />
               </Box>
-              <Text
-                fontFamily='"Fira Code", monospace'
-                fontSize="sm"
-                color="gray.300"
-              >
-                amanjoshi16011997@gmail.com
-              </Text>
+              {unlocked ? (
+                <Text
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="sm"
+                  color="gray.300"
+                  userSelect="all"
+                >
+                  amanjoshi16011997@gmail.com
+                </Text>
+              ) : (
+                <Text
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="sm"
+                  color="purple.300"
+                  cursor="pointer"
+                  textDecoration="underline"
+                  _hover={{ color: "purple.200" }}
+                  onClick={handleOpenGatekeeper}
+                >
+                  [Click to view email]
+                </Text>
+              )}
             </HStack>
 
             <HStack spacing={3}>
               <Box color="purple.400">
                 <FaWhatsapp size="16px" />
               </Box>
-              <Text
-                fontFamily='"Fira Code", monospace'
-                fontSize="sm"
-                color="gray.300"
-              >
-                +91 8449503656
-              </Text>
+              {unlocked ? (
+                <Text
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="sm"
+                  color="gray.300"
+                  userSelect="all"
+                >
+                  +91 8449503656
+                </Text>
+              ) : (
+                <Text
+                  fontFamily='"Fira Code", monospace'
+                  fontSize="sm"
+                  color="purple.300"
+                  cursor="pointer"
+                  textDecoration="underline"
+                  _hover={{ color: "purple.200" }}
+                  onClick={handleOpenGatekeeper}
+                >
+                  [Click to view WhatsApp]
+                </Text>
+              )}
             </HStack>
 
             <HStack spacing={3}>
