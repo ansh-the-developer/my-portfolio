@@ -6,6 +6,7 @@ import Skills from "./../../components/organisms/Skills/Skills";
 import About from "../../components/organisms/About.jsx/About";
 import Contacts from './../../components/organisms/Contacts/Contacts';
 import MetaTags from "../../components/atoms/MetaTags/MetaTags";
+import CinematicReveal from "../../components/atoms/CinematicReveal/CinematicReveal";
 
 const Home = () => {
   const homeSchemas = [
@@ -52,12 +53,24 @@ const Home = () => {
         description="Portfolio of Aman Joshi - professional React, Node, and Supabase developer. Specializing in high-fidelity HRMS suites, SaaS applications, internal systems (ITSM, ERP), and e-commerce websites (web & mobile apps) across Uttarakhand, India."
         schema={homeSchemas}
       />
-      <Hero />
-      <Quote />
-      <Projects />
-      <Skills />
-      <About/>
-      <Contacts/>
+      <CinematicReveal delay={0.1}>
+        <Hero />
+      </CinematicReveal>
+      <CinematicReveal delay={0.15}>
+        <Quote />
+      </CinematicReveal>
+      <CinematicReveal delay={0.15}>
+        <Projects />
+      </CinematicReveal>
+      <CinematicReveal delay={0.15}>
+        <Skills />
+      </CinematicReveal>
+      <CinematicReveal delay={0.15}>
+        <About/>
+      </CinematicReveal>
+      <CinematicReveal delay={0.15}>
+        <Contacts/>
+      </CinematicReveal>
     </>
   );
 };

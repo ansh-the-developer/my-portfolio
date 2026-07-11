@@ -213,9 +213,30 @@ Checks files using ESLint rules as configured in `eslint.config.js`.
 
 ---
 
+## 🎨 Cinematic Digital Experience & Mozart Synthesizer
+
+### Dynamic Interface Reveals & Grid Overlays
+* **Cinematic Reveal Wrapper**: Built [CinematicReveal.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/atoms/CinematicReveal/CinematicReveal.jsx) component. It wraps major page elements to trigger:
+  * Absolute top/right wireframe drawing borders
+  * A neon purple horizontal scanline sweeping down
+  * Blurred-to-sharp container opacity transitions on scroll triggers
+  * Scan-grid horizontal line overlays that fade out
+* **Home Page Integration**: Replaced standard fades in [Home.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/pages/Home/Home.jsx#L48) to progressive reveals. Bypassed automatically when `prefers-reduced-motion` is set.
+
+### Global Contextual AI Guide
+* **Path-Specific Narrator**: Refactored [AiAssistantGreeting.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/organisms/AiAssistantGreeting/AiAssistantGreeting.jsx) to track client route location changes (`useLocation`) and update text captions and voice synthesis contextually (Home, Projects, About, Contact).
+* **Vocal Synthesis & Visualizer**: Leverages browser speech API (`window.speechSynthesis`) to speak greetings using local neutral English voices. Displays absolute responsive volume sliders, mute/disable controls, and sound visual waves. State preferences are persisted in `localStorage`.
+
+### Mozart Classical Audio Scheduler
+* **Sonata Sequencer**: Overwrote [CyberAudioController.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/organisms/CyberAudioController/CyberAudioController.jsx) to loop the opening theme of Mozart's *Sonata in C Major (K.545)*.
+* **Pluck Synth**: Generates double piano string oscillators (triangle carrier and sine overtone harmonics) governed by rapid-attack exponential-decay envelopes, scheduled 300ms in advance (0 KB assets overhead). Includes volume sliders and mute toggles.
+
+---
+
 ## 📚 Configuration Guides
 
 Detailed walkthroughs for backend configurations are available inside:
 *   [supabase_setup_guide.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/supabase_setup_guide.md) (Database tables, RLS Policies, secrets)
 *   [free_notifications_setup.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/free_notifications_setup.md) (Google Web App & Telegram bot config guide)
+
 

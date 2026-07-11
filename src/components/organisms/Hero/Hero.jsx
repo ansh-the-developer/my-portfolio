@@ -12,8 +12,8 @@ const Hero = () => {
           {/* LEFT SIDE */}
           <div className={styles.left}>
             <h1 className={styles.title}>
-              Aman is a <span>web designer</span> and <br />
-              <span>front-end developer</span>
+              Aman is a <span>web designer</span> & <br />
+              <span>full-stack developer</span>
             </h1>
 
             <p className={styles.subtitle}>
