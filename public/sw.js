@@ -1,8 +1,8 @@
 const CACHE_NAME = "aj-portfolio-cache-v1";
 const urlsToCache = [
-  "/",
-  "/favicon.png",
-  "/manifest.json"
+  "./",
+  "favicon.png",
+  "manifest.json"
 ];
 
 self.addEventListener("install", (event) => {

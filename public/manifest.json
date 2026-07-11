@@ -3,12 +3,12 @@
   "name": "Aman Joshi Portfolio",
   "icons": [
     {
-      "src": "/aj_logo_192.png",
+      "src": "aj_logo_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/aj_logo_512.png",
+      "src": "aj_logo_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
