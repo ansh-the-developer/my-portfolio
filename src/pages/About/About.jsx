@@ -34,7 +34,7 @@ const About = () => {
     "I'm based in New Delhi, India",
     "I am a self-taught developer who loves to learn new things",
     "I enjoy hot cup of ginger tea while coding",
-    "I focus on building HRMS and luxury e-commerce platforms",
+    "I specialize in engineering high-fidelity HRMS suites and luxury e-commerce architectures",
   ];
 
   return (

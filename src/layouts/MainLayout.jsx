@@ -4,6 +4,7 @@ import MediaBar from "./../components/organisms/MediaBar/MediaBar";
 import Footer from './../components/organisms/Footer/Footer';
 import ResumeGatekeeper from "../components/organisms/ResumeGatekeeper/ResumeGatekeeper";
 import ContactGatekeeper from "../components/organisms/ContactGatekeeper/ContactGatekeeper";
+import PwaDownloadModal from "../components/organisms/PwaDownloadModal/PwaDownloadModal";
 
 const MainLayout = () => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = () => {
       <MediaBar />
       <ResumeGatekeeper />
       <ContactGatekeeper />
+      <PwaDownloadModal />
 
       <main>
         <div className="content-rail">
