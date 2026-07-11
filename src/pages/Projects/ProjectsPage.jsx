@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { clientProjects, majorProjects, demoProjects } from "../../data/projectsData";
+import MetaTags from "../../components/atoms/MetaTags/MetaTags";
 
 const ProjectCard = ({ title, tech, desc, liveUrl, githubUrl, requiresAuth, image, screenshots, onOpenScreenshots }) => (
   <Box
@@ -160,8 +161,33 @@ const ProjectsPage = () => {
     setSelectedScreenshot(null);
   };
 
+  const allProjects = [...clientProjects, ...majorProjects, ...demoProjects];
+
+  const projectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Aman Joshi's Software Engineering Projects Portfolio",
+    "description": "A curated list of freelance client SaaS projects, React dashboards, and custom storefronts created by Aman Joshi.",
+    "itemListElement": allProjects.map((proj, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "item": {
+        "@type": "CreativeWork",
+        "name": proj.title,
+        "description": proj.desc,
+        "genre": proj.tech,
+        "url": proj.liveUrl || "https://amanthedeveloper.netlify.app/projects"
+      }
+    }))
+  };
+
   return (
     <Box as="section" pt={8} pb={16}>
+      <MetaTags
+        title="Software Engineering Projects Portfolio | Aman Joshi"
+        description="Explore the case studies of Aman Joshi - full-stack developer. Featuring Workflare landing metrics, Happy HR systems, Abel/Amaranto luxury custom storefronts, and Supabase platforms."
+        schema={projectsSchema}
+      />
       <VStack align="stretch" spacing={10}>
         <Box>
           <HStack align="center" spacing={3} mb={2}>

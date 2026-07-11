@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { supabase } from "../../utils/supabaseClient";
+import MetaTags from "../../components/atoms/MetaTags/MetaTags";
 
 const CustomField = ({ label, children, error }) => (
   <VStack align="stretch" spacing={1} w="full">
@@ -193,8 +194,42 @@ const ContactPage = () => {
     }
   };
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact & Request Quote | Aman Joshi Full Stack Developer",
+    "description": "Request a software development quote or hire full-stack developer Aman Joshi for custom HRMS, CRM, SaaS, and Shopify custom cart platforms.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Aman Joshi Software Development Services",
+      "image": "https://amanthedeveloper.netlify.app/aj_logo_512.png",
+      "telephone": "+91 8449503656",
+      "email": "amanjoshi16011997@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Haldwani / Dehradun",
+        "addressRegion": "Uttarakhand",
+        "addressCountry": "India"
+      },
+      "priceRange": "$$",
+      "areaServed": [
+        "India",
+        "Uttarakhand",
+        "Dehradun",
+        "Haldwani",
+        "Rudrapur",
+        "Delhi NCR"
+      ]
+    }
+  };
+
   return (
     <Box as="section" pt={8} pb={16}>
+      <MetaTags
+        title="Contact & Get a Website Quote | Aman Joshi"
+        description="Hire Aman Joshi, full-stack React developer. Request custom business quotes for HRMS portals, luxury Shopify storefronts, and dashboard integrations."
+        schema={contactSchema}
+      />
       <VStack align="stretch" spacing={10}>
         {/* Title */}
         <Box>

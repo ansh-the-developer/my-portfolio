@@ -195,8 +195,27 @@ Checks files using ESLint rules as configured in `eslint.config.js`.
 
 ---
 
+## ⚡ PWA & SEO Strategy Setup
+
+### Progressive Web App (PWA) Configuration
+* **Service Worker**: Managed inside [sw.js](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/public/sw.js) for high-speed offline capabilities and installability recognition.
+* **App Manifest**: Linked through [manifest.json](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/public/manifest.json) specifying branding schemes, background colors, circular AJ logo vectors (`192px`/`512px`), and standalone portrait orientations.
+* **Download Modal Gating**: An interactive, premium installer dialog [PwaDownloadModal.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/organisms/PwaDownloadModal/PwaDownloadModal.jsx) triggers automatically on tab/window load sessions, stashing standard browser prompts and triggering direct download actions.
+
+### Search Engine Optimization (SEO) & Structured Schema
+* **Dynamic Meta Management**: Built custom [MetaTags.jsx](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/src/components/atoms/MetaTags/MetaTags.jsx) handling immediate document titles, page descriptions, canonical paths, Open Graph objects, and Twitter cards per route mount.
+* **Structured Data**: Injected target JSON-LD metadata for crawlers:
+  * **Home Page**: `Person` (credentials, socials) and `WebSite` search descriptors.
+  * **About Page**: `AboutPage` mapping career paths and specialized software skill fields.
+  * **Projects Page**: `ItemList` dynamically grouping all creative work and client projects.
+  * **Contact Page**: `ContactPage` coupled with `ProfessionalService` schemas for geolocalized targeting.
+* **Robots and Sitemap**: Created [robots.txt](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/public/robots.txt) and [sitemap.xml](file:///e:/My%20Office/React%20Js%20Projects/My%20Portfolio%20Website/portfolio/public/sitemap.xml) for crawlers.
+
+---
+
 ## 📚 Configuration Guides
 
 Detailed walkthroughs for backend configurations are available inside:
 *   [supabase_setup_guide.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/supabase_setup_guide.md) (Database tables, RLS Policies, secrets)
 *   [free_notifications_setup.md](file:///C:/Users/aman/.gemini/antigravity-ide/brain/3d00a168-eedb-42a8-93e0-095416100b1f/free_notifications_setup.md) (Google Web App & Telegram bot config guide)
+

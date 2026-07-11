@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import aboutImg from "../../assets/images/aboutImg.png";
 import dotsImg from "../../assets/icons/Dots.png";
+import MetaTags from "../../components/atoms/MetaTags/MetaTags";
 
 const FunFactCard = ({ text }) => (
   <Box
@@ -37,8 +38,42 @@ const About = () => {
     "I specialize in engineering high-fidelity HRMS suites and luxury e-commerce architectures",
   ];
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Aman Joshi | Full Stack Software Engineer",
+    "description": "Information about Aman Joshi, an Indian full-stack software engineer specializing in SaaS HRMS systems, custom dashboards, and luxury Shopify/React custom storefronts.",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Aman Joshi",
+      "jobTitle": "Full Stack Developer",
+      "knowsAbout": [
+        "React",
+        "Node.js",
+        "Supabase",
+        "Chakra UI",
+        "PostgreSQL",
+        "SaaS",
+        "HRMS Dashboard Development",
+        "Shopify Custom Cart Integration",
+        "Progressive Web Apps"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Delhi / Haldwani / Rudrapur / Dehradun",
+        "addressRegion": "Uttarakhand & Delhi NCR",
+        "addressCountry": "India"
+      }
+    }
+  };
+
   return (
     <Box as="section" pt={8} pb={16}>
+      <MetaTags
+        title="About Aman Joshi | Full Stack Software Engineer"
+        description="Learn more about Aman Joshi, a self-taught software developer based in New Delhi / Uttarakhand, India. Specializing in high-performance HRMS platforms, e-commerce integrations, and React dashboard engineering."
+        schema={aboutSchema}
+      />
       <VStack align="stretch" spacing={10}>
         {/* Title */}
         <Box>
